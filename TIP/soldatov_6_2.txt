@@ -1,0 +1,47 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m, w, x, y, i, j;
+    int mas[34][34];
+     for(i=1;i<34;i++){
+        for(j=1;j<34;j++){
+            mas[i][j] = 0;
+        }
+     }
+    cin >> n;
+    cin >> m;
+    cin >> w;
+    for(i=0;i<w;i++){
+        cin >> x;
+        cin >> y;
+        mas[x][y] = -1;
+    }
+    for(i=1;i<n+1;i++){
+        for(j=1;j<m+1;j++){
+            if(mas[i][j] == -1){
+                for(x=0;x<3;x++){
+                    for(y=0;y<3;y++){
+                        if(mas[i-1+x][j-1+y] != -1){
+                            mas[i-1+x][j-1+y] += 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    for(i=1;i<n+1;i++){
+        for(j=1;j<m+1;j++){
+            if(mas[i][j] == -1){
+                cout << "* ";
+            }
+            else{
+                cout << mas[i][j] << " ";
+            }
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}

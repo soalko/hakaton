@@ -1,0 +1,21 @@
+.regist .form {
+	background-color: #A0C591;
+	padding: 30px;
+	border-radius: 10px;
+}
+.regist .input {
+	margin: 10px 0;
+}
+.regist .text-center {
+	text-align: center;
+	margin: 10px 0;
+}
+
+@media only screen and (max-width : 576px){
+	.regist .form {
+		border-radius: 0;
+	}
+}
+h3 {
+	color: #000;
+}

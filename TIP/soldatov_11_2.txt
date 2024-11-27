@@ -1,0 +1,50 @@
+ #include <iostream>
+#include <vector>
+
+void pirozhok(int n, int d) {
+    std::vector<int> calories(n);
+    int pir_per_day, st_ind;
+    int total_sum = 0;
+    for (int i = 0; i < n; i++) {
+        std::cin >> calories[i];
+    }
+
+    sort(calories.begin(), calories.end());
+    pir_per_day = calories.size() / d;
+    // std::cout << pir_per_day << std::endl;
+
+    if (pir_per_day == 1) {
+        for (int i = 0; i < n % d; i++) {
+            total_sum += calories[i];
+        }
+    } else {
+        for (int i = 0; i < n % d; i++) {
+            total_sum += calories[i * pir_per_day - 1] - calories[i * pir_per_day];
+        }
+    }
+
+    if (pir_per_day == 1) {
+        for (int i = n % d; i < n; i++) {
+            total_sum += calories[i];
+        }
+    } else {
+        for (int i = n % d; i < n; i++) {
+            total_sum += calories[i * pir_per_day - 1] - calories[i * pir_per_day];
+        }
+    }
+
+    for (int i = st_ind; i < calories.size(); i++) {
+        std::cout << calories[i] << std::endl;
+    }
+    std::cout << abs(total_sum) << std::endl;
+}
+
+
+int main() {
+    int n, d;
+    std::cin >> n >> d;
+
+    pirozhok(n, d);
+    return 0;
+}
+

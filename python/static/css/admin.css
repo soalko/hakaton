@@ -1,0 +1,39 @@
+.main {
+	padding: 0;
+}
+.info-s {
+	padding-bottom: 0px;
+}
+.info-s .info {
+	color: #000;
+}
+.info-s .col-md-3, .col-md-9 {
+	margin: 10px 0;
+}
+.info-s img {
+	max-width: 150px;
+	max-height: 150px;
+	border-radius: 30px;
+
+}
+.info-s .col-md-3 {
+	padding: 0;
+	text-align: center;
+}
+.buttons {
+	padding: 20px;
+	text-align: center;
+}
+.buttons .col-md-12 {
+	padding: 20px;
+}
+@media only screen and (max-width : 768px){
+	.info-s img {
+		margin-top: 10px;
+	}
+}
+@media only screen and (max-width : 576px){
+	.buttons a {
+		font-size: 15px;
+	}
+}

@@ -1,0 +1,24 @@
+//Soldatov Alexander
+#include <iostream>
+
+long double vozv(long double a, int n){
+    if (n == 1){
+        return a;
+    }
+    long double res = vozv(a, n / 2);
+    if (n % 2 == 0){
+	return res * res;
+    } else {
+        return res * res * a;
+    }
+}
+
+
+int main(){
+    long double a;
+    int n;
+    std::cin >> a;
+    std::cin >> n;
+    std::cout << vozv(a, n);
+    return 0;
+}

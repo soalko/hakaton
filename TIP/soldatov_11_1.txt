@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+
+void brs(int n, int m) {
+    int mas[n][m];
+    std::vector<std::pair<int,int>> res;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            std::cin >> mas[i][j];
+        }
+    }
+
+    for (int i = 1; i < n; i++) {
+        mas[i][0] = mas[i][0] + mas[i - 1][0];
+    }
+    for (int i = 1; i < m; i++) {
+        mas[0][i] = mas[0][i] + mas[0][i - 1];
+    }
+
+    std::cout << "0 0" << std::endl;
+    for (int i = 1; i < n; i++) {
+        for (int j = 1; j < m; j++) {
+            mas[i - 1][j] > mas[i][j - 1] ? mas[i][j] += mas[i - 1][j] : mas[i][j] += mas[i][j - 1];
+            if (mas[i - 1][j] > mas[i][j - 1] && find(res.begin(), res.end(), std::make_pair(i-1, j))
+                == res.end()) {
+                std::cout << i - 1 << " " << j << std::endl;
+                res.push_back(std::make_pair(i - 1, j));
+            } else {
+                std::cout << i << " " << j - 1 << std::endl;
+                res.push_back(std::make_pair(i, j - 1));;
+            }
+        }
+    }
+    std::cout << n - 1 << " " << m - 1 << std::endl;
+}
+
+int main() {
+    int n, m;
+    std::cin >> n >> m;
+    brs(n, m);
+
+    return 0;
+}
+

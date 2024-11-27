@@ -1,0 +1,57 @@
+// Soldatov Alexander, ЭФБО-04-24
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <bitset>
+#include <vector>
+
+std::string toBinary(int number) {
+    if (number == 0) return "0";
+    std::vector<int> binaryDigits;
+    while (number > 0) {
+        binaryDigits.push_back(number % 2);
+        number /= 2;
+    }
+    std::string binaryRepresentation;
+    for (int i = binaryDigits.size() - 1; i >= 0; --i) {
+        binaryRepresentation += std::to_string(binaryDigits[i]);
+    }
+    return binaryRepresentation;
+}
+
+
+int main() {
+    std::ifstream input("input.txt");
+    std::ofstream output("output.txt");
+    std::string line;
+    std::getline(input, line);
+    input.close();
+    
+    std::stringstream result;
+    std::stringstream numberBuffer;
+    
+    for (char ch : line) {
+        if (isdigit(ch)) {
+            numberBuffer << ch;
+        } else {
+            if (!numberBuffer.str().empty()) {
+                int number = std::stoi(numberBuffer.str());
+                result << toBinary(number); 
+                numberBuffer.str(""); 
+                numberBuffer.clear();
+            }
+            result << ch;
+        }
+    }
+    if (!numberBuffer.str().empty()) {
+        int number = std::stoi(numberBuffer.str());
+        result << toBinary(number);
+    }
+    output << result.str();
+    output.close();
+
+
+    return 0;
+}

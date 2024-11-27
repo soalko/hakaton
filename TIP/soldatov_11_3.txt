@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+
+int buket(int n, int k, int l) {
+    std::vector<int> flowers;
+    int temp = 0, total = 0, a;
+    for (int i = 0; i < n; i++) {
+        std::cin >> a;
+        flowers.push_back(a);
+    }
+    sort(flowers.begin(), flowers.end());
+    std::reverse(flowers.begin(), flowers.end());
+    for (int i = 0; i < k; i++) {
+        if (temp != l && flowers[i] == flowers[i + 1]) {
+            temp ++;
+            total += flowers[i];
+        } else if (temp != l && flowers[i] != flowers[i + 1]) {
+            total += flowers[i];
+            temp = 0;
+        } else if (temp == l && flowers[i] != flowers[i + 1]) {
+            temp = 0;
+        }
+    }
+    return total;
+}
+
+
+int main() {
+    int n, k, l;
+    std::cin >> n >> k >> l;
+    std::cout << buket(n, k, l);
+
+    return 0;
+}
+

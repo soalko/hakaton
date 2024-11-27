@@ -1,0 +1,21 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, j, i;
+    cin >> a;
+    for(j = 0; j < a; j++){
+        for(i = 0; i < a - j - 1; i++){
+            cout << 0 << " ";
+            
+        }
+        cout << 1 << " ";
+        for(i = 0; i < j; i++){
+            cout << 2 << " ";
+            
+        }
+        cout << "" << endl;
+    }
+    return 0;
+}

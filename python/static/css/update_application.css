@@ -1,0 +1,24 @@
+.datas .form {
+	background-color: #A0C591;
+	padding: 30px;
+	border-radius: 10px;
+}
+.datas .input {
+	margin: 10px 0;
+}
+.datas .text-center {
+	text-align: center;
+	margin: 10px 0;
+}
+.datas {
+	padding: 30px;
+}
+
+@media only screen and (max-width : 576px){
+	.datas .form {
+		border-radius: 0;
+	}
+}
+h3 {
+	color: #000;
+}

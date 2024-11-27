@@ -1,0 +1,14 @@
+
+Installation Directory: /Users/soldatov_a/Documents/Postgresql
+Server Installation Directory: /Users/soldatov_a/Documents/Postgresql
+Data Directory: /Users/soldatov_a/Documents/Postgresql/data
+Database Port: 5432
+Database Superuser: postgres
+Operating System Account: postgres
+Database Service: postgresql-17
+Command Line Tools Installation Directory: /Users/soldatov_a/Documents/Postgresql
+pgAdmin4 Installation Directory: /Users/soldatov_a/Documents/Postgresql/pgAdmin 4
+Stack Builder Installation Directory: /Users/soldatov_a/Documents/Postgresql/stackbuilder
+Installation Log: /tmp/install-postgresql.log
+===== Installation completed at: 2024-11-22(YYYY-MM-DD) - 17:28:54(HH:MM:SS) =====
+                            

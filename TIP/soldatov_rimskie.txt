@@ -1,0 +1,60 @@
+/ Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+basic_string <char>::size_type size, length;
+
+int main() {
+    int x, total;
+    string y;
+    cin >> x;
+    cin >> y;
+    string line1((x / 1000), 'M');
+    string line2(((x % 1000) / 500), 'D');
+    string line3(((x % 500) / 100), 'C');
+    string line4(((x % 100) / 50), 'L');
+    string line5(((x % 50) / 10), 'X');
+    string line6(((x % 10) / 5), 'V');
+    if(((x % 5) / 1) == 4){
+        std::cout <<line1<<line2<<line3<<line4<<line5<<line6<<"IV"<<endl;
+    }
+    else{
+        string line7(((x % 5) / 1), 'I');
+        std::cout <<line1<<line2<<line3<<line4<<line5<<line6<<line7<<endl;
+    }
+    total = 0;
+    int i;
+    for(i=0; i < y.size(); i++){
+        
+        if(y[i] == 'M'){
+            total += 1000;
+        }
+        if(y[i] == 'D'){
+            total += 500;
+        }
+        if(y[i] == 'C'){
+            total += 100;
+        }
+        if(y[i] == 'L'){
+            total += 50;
+        }
+        if(y[i] == 'X'){
+            total += 10;
+        }
+        if(y[i] == 'V'){
+            total += 5;
+        }
+        if(y[i] == 'I'){
+            total += 1;
+        }
+    }
+    
+    if((y[y.size() - 1] == 'V') && (y[y.size() - 2] == 'I')){
+            total -= 2;}
+            
+    std::cout << total << endl;
+    
+    
+    
+    
+    return 0;
+}

@@ -1,0 +1,18 @@
+//Soldatov Alexander
+#include <iostream>
+
+int nod(int a, int b){
+    if (!b){
+        return a;
+    }
+    return nod(b, a % b);
+}
+
+
+int main(){
+    long int a, b;
+    std::cin >> a;
+    std::cin >> b;
+    std::cout << nod(a, b);
+    return 0;
+}

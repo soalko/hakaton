@@ -1,0 +1,3 @@
+/Users/soldatov_a/Documents/training_cpp_project/cmake-build-debug/CMakeFiles/training_cpp_project.dir
+/Users/soldatov_a/Documents/training_cpp_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/soldatov_a/Documents/training_cpp_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
